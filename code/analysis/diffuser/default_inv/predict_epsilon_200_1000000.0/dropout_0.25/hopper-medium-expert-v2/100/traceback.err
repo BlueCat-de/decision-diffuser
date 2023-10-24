@@ -1,0 +1,117 @@
+Traceback (most recent call last):
+  File "/home/qh802/anaconda3/envs/decdiff/lib/python3.8/site-packages/ml_logger/__init__.py", line 203, in thunk
+    results = fn(*(args or ARGS), **_KWARGS)
+  File "/mnt/203663f6-7995-4295-8c53-9e2e9621b487/cqm/decision-diffuser/code/scripts/train.py", line 49, in main
+    dataset = dataset_config()
+  File "/mnt/203663f6-7995-4295-8c53-9e2e9621b487/cqm/decision-diffuser/code/diffuser/utils/config.py", line 65, in __call__
+    instance = self._class(*args, **kwargs, **self._dict)
+  File "/mnt/203663f6-7995-4295-8c53-9e2e9621b487/cqm/decision-diffuser/code/diffuser/datasets/sequence.py", line 31, in __init__
+    fields = ReplayBuffer(max_n_episodes, max_path_length, termination_penalty)
+  File "/mnt/203663f6-7995-4295-8c53-9e2e9621b487/cqm/decision-diffuser/code/diffuser/datasets/buffer.py", line 12, in __init__
+    'path_lengths': np.zeros(max_n_episodes, dtype=np.int),
+  File "/home/qh802/anaconda3/envs/decdiff/lib/python3.8/site-packages/numpy/__init__.py", line 305, in __getattr__
+    raise AttributeError(__former_attrs__[attr])
+AttributeError: module 'numpy' has no attribute 'int'.
+`np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+    https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+Traceback (most recent call last):
+  File "/home/qh802/anaconda3/envs/decdiff/lib/python3.8/site-packages/ml_logger/__init__.py", line 203, in thunk
+    results = fn(*(args or ARGS), **_KWARGS)
+  File "/mnt/203663f6-7995-4295-8c53-9e2e9621b487/cqm/decision-diffuser/code/scripts/train.py", line 49, in main
+    dataset = dataset_config()
+  File "/mnt/203663f6-7995-4295-8c53-9e2e9621b487/cqm/decision-diffuser/code/diffuser/utils/config.py", line 65, in __call__
+    instance = self._class(*args, **kwargs, **self._dict)
+  File "/mnt/203663f6-7995-4295-8c53-9e2e9621b487/cqm/decision-diffuser/code/diffuser/datasets/sequence.py", line 31, in __init__
+    fields = ReplayBuffer(max_n_episodes, max_path_length, termination_penalty)
+  File "/mnt/203663f6-7995-4295-8c53-9e2e9621b487/cqm/decision-diffuser/code/diffuser/datasets/buffer.py", line 12, in __init__
+    'path_lengths': np.zeros(max_n_episodes, dtype=np.int),
+  File "/home/qh802/anaconda3/envs/decdiff/lib/python3.8/site-packages/numpy/__init__.py", line 305, in __getattr__
+    raise AttributeError(__former_attrs__[attr])
+AttributeError: module 'numpy' has no attribute 'int'.
+`np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+    https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+Traceback (most recent call last):
+  File "/home/qh802/anaconda3/envs/decdiff/lib/python3.8/site-packages/ml_logger/__init__.py", line 203, in thunk
+    results = fn(*(args or ARGS), **_KWARGS)
+  File "/mnt/203663f6-7995-4295-8c53-9e2e9621b487/cqm/decision-diffuser/code/scripts/train.py", line 175, in main
+    trainer.train(n_train_steps=Config.n_steps_per_epoch)
+  File "/mnt/203663f6-7995-4295-8c53-9e2e9621b487/cqm/decision-diffuser/code/diffuser/utils/training.py", line 127, in train
+    self.save()
+  File "/mnt/203663f6-7995-4295-8c53-9e2e9621b487/cqm/decision-diffuser/code/diffuser/utils/training.py", line 161, in save
+    os.makedirs(savepath, exist_ok=True)
+  File "/home/qh802/anaconda3/envs/decdiff/lib/python3.8/os.py", line 211, in makedirs
+    makedirs(head, exist_ok=exist_ok)
+  File "/home/qh802/anaconda3/envs/decdiff/lib/python3.8/os.py", line 211, in makedirs
+    makedirs(head, exist_ok=exist_ok)
+  File "/home/qh802/anaconda3/envs/decdiff/lib/python3.8/os.py", line 211, in makedirs
+    makedirs(head, exist_ok=exist_ok)
+  [Previous line repeated 5 more times]
+  File "/home/qh802/anaconda3/envs/decdiff/lib/python3.8/os.py", line 221, in makedirs
+    mkdir(name, mode)
+PermissionError: [Errno 13] Permission denied: '/home/aajay'
+Traceback (most recent call last):
+  File "/home/qh802/anaconda3/envs/decdiff/lib/python3.8/site-packages/ml_logger/__init__.py", line 203, in thunk
+    results = fn(*(args or ARGS), **_KWARGS)
+  File "/mnt/203663f6-7995-4295-8c53-9e2e9621b487/cqm/decision-diffuser/code/scripts/train.py", line 175, in main
+    trainer.train(n_train_steps=Config.n_steps_per_epoch)
+  File "/mnt/203663f6-7995-4295-8c53-9e2e9621b487/cqm/decision-diffuser/code/diffuser/utils/training.py", line 127, in train
+    self.save()
+  File "/mnt/203663f6-7995-4295-8c53-9e2e9621b487/cqm/decision-diffuser/code/diffuser/utils/training.py", line 163, in save
+    os.makedirs(savepath, exist_ok=True)
+  File "/mnt/203663f6-7995-4295-8c53-9e2e9621b487/cqm/decision-diffuser/code/diffuser/utils/training.py", line 163, in save
+    os.makedirs(savepath, exist_ok=True)
+  File "/home/qh802/anaconda3/envs/decdiff/lib/python3.8/bdb.py", line 88, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/home/qh802/anaconda3/envs/decdiff/lib/python3.8/bdb.py", line 113, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+Traceback (most recent call last):
+  File "/home/qh802/anaconda3/envs/decdiff/lib/python3.8/site-packages/ml_logger/__init__.py", line 203, in thunk
+    results = fn(*(args or ARGS), **_KWARGS)
+  File "/mnt/203663f6-7995-4295-8c53-9e2e9621b487/cqm/decision-diffuser/code/scripts/train.py", line 175, in main
+    trainer.train(n_train_steps=Config.n_steps_per_epoch)
+  File "/mnt/203663f6-7995-4295-8c53-9e2e9621b487/cqm/decision-diffuser/code/diffuser/utils/training.py", line 116, in train
+    loss, infos = self.model.loss(*batch)
+  File "/mnt/203663f6-7995-4295-8c53-9e2e9621b487/cqm/decision-diffuser/code/diffuser/models/diffusion.py", line 522, in loss
+    diffuse_loss, info = self.p_losses(x[:, :, self.action_dim:], cond, t, returns)
+  File "/mnt/203663f6-7995-4295-8c53-9e2e9621b487/cqm/decision-diffuser/code/diffuser/models/diffusion.py", line 489, in p_losses
+    x_recon = self.model(x_noisy, cond, t, returns)
+  File "/home/qh802/anaconda3/envs/decdiff/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/qh802/anaconda3/envs/decdiff/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/203663f6-7995-4295-8c53-9e2e9621b487/cqm/decision-diffuser/code/diffuser/models/temporal.py", line 225, in forward
+    x = resnet2(x, t)
+  File "/home/qh802/anaconda3/envs/decdiff/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/qh802/anaconda3/envs/decdiff/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/203663f6-7995-4295-8c53-9e2e9621b487/cqm/decision-diffuser/code/diffuser/models/temporal.py", line 103, in forward
+    out = self.blocks[1](out)
+  File "/home/qh802/anaconda3/envs/decdiff/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/qh802/anaconda3/envs/decdiff/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/203663f6-7995-4295-8c53-9e2e9621b487/cqm/decision-diffuser/code/diffuser/models/helpers.py", line 68, in forward
+    return self.block(x)
+  File "/home/qh802/anaconda3/envs/decdiff/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/qh802/anaconda3/envs/decdiff/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/qh802/anaconda3/envs/decdiff/lib/python3.8/site-packages/torch/nn/modules/container.py", line 215, in forward
+    input = module(input)
+  File "/home/qh802/anaconda3/envs/decdiff/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/qh802/anaconda3/envs/decdiff/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/qh802/anaconda3/envs/decdiff/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 310, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/home/qh802/anaconda3/envs/decdiff/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 306, in _conv_forward
+    return F.conv1d(input, weight, bias, self.stride,
+  File "/home/qh802/anaconda3/envs/decdiff/lib/python3.8/bdb.py", line 92, in trace_dispatch
+    return self.dispatch_return(frame, arg)
+  File "/home/qh802/anaconda3/envs/decdiff/lib/python3.8/bdb.py", line 154, in dispatch_return
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit

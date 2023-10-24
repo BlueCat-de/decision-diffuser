@@ -1,0 +1,358 @@
+diff --git a/code/analysis/train.py b/code/analysis/train.py
+index a1dad1d..8dce44e 100644
+--- a/code/analysis/train.py
++++ b/code/analysis/train.py
+@@ -1,11 +1,23 @@
+-if __name__ == '__main__':
++
++
++if __name__ == '__main__':   
++    import sys
++    import os
++
++    SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
++    sys.path.append(os.path.dirname(SCRIPT_DIR))
++
++
++
+     from ml_logger import logger, instr, needs_relaunch
+     from analysis import RUN
++    from ml_logger import RUN
+     import jaynes
+     from scripts.train import main
+     from config.locomotion_config import Config
+     from params_proto.neo_hyper import Sweep
+ 
++
+     sweep = Sweep(RUN, Config).load("default_inv.jsonl")
+ 
+     for kwargs in sweep:
+diff --git a/code/environment.yml b/code/environment.yml
+index 31a3487..0a8ddac 100644
+--- a/code/environment.yml
++++ b/code/environment.yml
+@@ -9,6 +9,7 @@ dependencies:
+ - pip:
+     - -f https://download.pytorch.org/whl/torch_stable.html
+     - numpy
++    - setuptools==63.2.0
+     - gym==0.18.0
+     - mujoco-py==2.0.2.13
+     - matplotlib==3.3.4diff --git a/code/analysis/train.py b/code/analysis/train.py
+index a1dad1d..8dce44e 100644
+--- a/code/analysis/train.py
++++ b/code/analysis/train.py
+@@ -1,11 +1,23 @@
+-if __name__ == '__main__':
++
++
++if __name__ == '__main__':   
++    import sys
++    import os
++
++    SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
++    sys.path.append(os.path.dirname(SCRIPT_DIR))
++
++
++
+     from ml_logger import logger, instr, needs_relaunch
+     from analysis import RUN
++    from ml_logger import RUN
+     import jaynes
+     from scripts.train import main
+     from config.locomotion_config import Config
+     from params_proto.neo_hyper import Sweep
+ 
++
+     sweep = Sweep(RUN, Config).load("default_inv.jsonl")
+ 
+     for kwargs in sweep:
+diff --git a/code/environment.yml b/code/environment.yml
+index 31a3487..0a8ddac 100644
+--- a/code/environment.yml
++++ b/code/environment.yml
+@@ -9,6 +9,7 @@ dependencies:
+ - pip:
+     - -f https://download.pytorch.org/whl/torch_stable.html
+     - numpy
++    - setuptools==63.2.0
+     - gym==0.18.0
+     - mujoco-py==2.0.2.13
+     - matplotlib==3.3.4diff --git a/code/analysis/train.py b/code/analysis/train.py
+index a1dad1d..8dce44e 100644
+--- a/code/analysis/train.py
++++ b/code/analysis/train.py
+@@ -1,11 +1,23 @@
+-if __name__ == '__main__':
++
++
++if __name__ == '__main__':   
++    import sys
++    import os
++
++    SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
++    sys.path.append(os.path.dirname(SCRIPT_DIR))
++
++
++
+     from ml_logger import logger, instr, needs_relaunch
+     from analysis import RUN
++    from ml_logger import RUN
+     import jaynes
+     from scripts.train import main
+     from config.locomotion_config import Config
+     from params_proto.neo_hyper import Sweep
+ 
++
+     sweep = Sweep(RUN, Config).load("default_inv.jsonl")
+ 
+     for kwargs in sweep:
+diff --git a/code/diffuser/datasets/buffer.py b/code/diffuser/datasets/buffer.py
+index 42bc734..29edcd8 100644
+--- a/code/diffuser/datasets/buffer.py
++++ b/code/diffuser/datasets/buffer.py
+@@ -9,7 +9,7 @@ class ReplayBuffer:
+ 
+     def __init__(self, max_n_episodes, max_path_length, termination_penalty):
+         self._dict = {
+-            'path_lengths': np.zeros(max_n_episodes, dtype=np.int),
++            'path_lengths': np.zeros(max_n_episodes, dtype=np.int32),
+         }
+         self._count = 0
+         self.max_n_episodes = max_n_episodes
+diff --git a/code/environment.yml b/code/environment.yml
+index 31a3487..0a8ddac 100644
+--- a/code/environment.yml
++++ b/code/environment.yml
+@@ -9,6 +9,7 @@ dependencies:
+ - pip:
+     - -f https://download.pytorch.org/whl/torch_stable.html
+     - numpy
++    - setuptools==63.2.0
+     - gym==0.18.0
+     - mujoco-py==2.0.2.13
+     - matplotlib==3.3.4diff --git a/code/analysis/train.py b/code/analysis/train.py
+index a1dad1d..8dce44e 100644
+--- a/code/analysis/train.py
++++ b/code/analysis/train.py
+@@ -1,11 +1,23 @@
+-if __name__ == '__main__':
++
++
++if __name__ == '__main__':   
++    import sys
++    import os
++
++    SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
++    sys.path.append(os.path.dirname(SCRIPT_DIR))
++
++
++
+     from ml_logger import logger, instr, needs_relaunch
+     from analysis import RUN
++    from ml_logger import RUN
+     import jaynes
+     from scripts.train import main
+     from config.locomotion_config import Config
+     from params_proto.neo_hyper import Sweep
+ 
++
+     sweep = Sweep(RUN, Config).load("default_inv.jsonl")
+ 
+     for kwargs in sweep:
+diff --git a/code/diffuser/datasets/buffer.py b/code/diffuser/datasets/buffer.py
+index 42bc734..29edcd8 100644
+--- a/code/diffuser/datasets/buffer.py
++++ b/code/diffuser/datasets/buffer.py
+@@ -9,7 +9,7 @@ class ReplayBuffer:
+ 
+     def __init__(self, max_n_episodes, max_path_length, termination_penalty):
+         self._dict = {
+-            'path_lengths': np.zeros(max_n_episodes, dtype=np.int),
++            'path_lengths': np.zeros(max_n_episodes, dtype=np.int32),
+         }
+         self._count = 0
+         self.max_n_episodes = max_n_episodes
+diff --git a/code/diffuser/utils/training.py b/code/diffuser/utils/training.py
+index e8dcdb4..c92ef7d 100644
+--- a/code/diffuser/utils/training.py
++++ b/code/diffuser/utils/training.py
+@@ -158,6 +158,8 @@ class Trainer(object):
+             'ema': self.ema_model.state_dict()
+         }
+         savepath = os.path.join(self.bucket, logger.prefix, 'checkpoint')
++        import ipdb
++        ipdb.set_trace()
+         os.makedirs(savepath, exist_ok=True)
+         # logger.save_torch(data, savepath)
+         if self.save_checkpoints:
+diff --git a/code/environment.yml b/code/environment.yml
+index 31a3487..0a8ddac 100644
+--- a/code/environment.yml
++++ b/code/environment.yml
+@@ -9,6 +9,7 @@ dependencies:
+ - pip:
+     - -f https://download.pytorch.org/whl/torch_stable.html
+     - numpy
++    - setuptools==63.2.0
+     - gym==0.18.0
+     - mujoco-py==2.0.2.13
+     - matplotlib==3.3.4diff --git a/code/analysis/train.py b/code/analysis/train.py
+index a1dad1d..8dce44e 100644
+--- a/code/analysis/train.py
++++ b/code/analysis/train.py
+@@ -1,11 +1,23 @@
+-if __name__ == '__main__':
++
++
++if __name__ == '__main__':   
++    import sys
++    import os
++
++    SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
++    sys.path.append(os.path.dirname(SCRIPT_DIR))
++
++
++
+     from ml_logger import logger, instr, needs_relaunch
+     from analysis import RUN
++    from ml_logger import RUN
+     import jaynes
+     from scripts.train import main
+     from config.locomotion_config import Config
+     from params_proto.neo_hyper import Sweep
+ 
++
+     sweep = Sweep(RUN, Config).load("default_inv.jsonl")
+ 
+     for kwargs in sweep:
+diff --git a/code/config/locomotion_config.py b/code/config/locomotion_config.py
+index 90173b3..be27ce9 100644
+--- a/code/config/locomotion_config.py
++++ b/code/config/locomotion_config.py
+@@ -6,7 +6,7 @@ class Config(ParamsProto):
+     # misc
+     seed = 100
+     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+-    bucket = '/home/aajay/weights/'
++    bucket = '/mnt/203663f6-7995-4295-8c53-9e2e9621b487/cqm/decision-diffuser/weights/'
+     dataset = 'hopper-medium-expert-v2'
+ 
+     ## model
+diff --git a/code/diffuser/datasets/buffer.py b/code/diffuser/datasets/buffer.py
+index 42bc734..29edcd8 100644
+--- a/code/diffuser/datasets/buffer.py
++++ b/code/diffuser/datasets/buffer.py
+@@ -9,7 +9,7 @@ class ReplayBuffer:
+ 
+     def __init__(self, max_n_episodes, max_path_length, termination_penalty):
+         self._dict = {
+-            'path_lengths': np.zeros(max_n_episodes, dtype=np.int),
++            'path_lengths': np.zeros(max_n_episodes, dtype=np.int32),
+         }
+         self._count = 0
+         self.max_n_episodes = max_n_episodes
+diff --git a/code/diffuser/utils/training.py b/code/diffuser/utils/training.py
+index e8dcdb4..c92ef7d 100644
+--- a/code/diffuser/utils/training.py
++++ b/code/diffuser/utils/training.py
+@@ -158,6 +158,8 @@ class Trainer(object):
+             'ema': self.ema_model.state_dict()
+         }
+         savepath = os.path.join(self.bucket, logger.prefix, 'checkpoint')
++        import ipdb
++        ipdb.set_trace()
+         os.makedirs(savepath, exist_ok=True)
+         # logger.save_torch(data, savepath)
+         if self.save_checkpoints:
+diff --git a/code/environment.yml b/code/environment.yml
+index 31a3487..0a8ddac 100644
+--- a/code/environment.yml
++++ b/code/environment.yml
+@@ -9,6 +9,7 @@ dependencies:
+ - pip:
+     - -f https://download.pytorch.org/whl/torch_stable.html
+     - numpy
++    - setuptools==63.2.0
+     - gym==0.18.0
+     - mujoco-py==2.0.2.13
+     - matplotlib==3.3.4diff --git a/code/analysis/train.py b/code/analysis/train.py
+index a1dad1d..8dce44e 100644
+--- a/code/analysis/train.py
++++ b/code/analysis/train.py
+@@ -1,11 +1,23 @@
+-if __name__ == '__main__':
++
++
++if __name__ == '__main__':   
++    import sys
++    import os
++
++    SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
++    sys.path.append(os.path.dirname(SCRIPT_DIR))
++
++
++
+     from ml_logger import logger, instr, needs_relaunch
+     from analysis import RUN
++    from ml_logger import RUN
+     import jaynes
+     from scripts.train import main
+     from config.locomotion_config import Config
+     from params_proto.neo_hyper import Sweep
+ 
++
+     sweep = Sweep(RUN, Config).load("default_inv.jsonl")
+ 
+     for kwargs in sweep:
+diff --git a/code/config/locomotion_config.py b/code/config/locomotion_config.py
+index 90173b3..be27ce9 100644
+--- a/code/config/locomotion_config.py
++++ b/code/config/locomotion_config.py
+@@ -6,7 +6,7 @@ class Config(ParamsProto):
+     # misc
+     seed = 100
+     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+-    bucket = '/home/aajay/weights/'
++    bucket = '/mnt/203663f6-7995-4295-8c53-9e2e9621b487/cqm/decision-diffuser/weights/'
+     dataset = 'hopper-medium-expert-v2'
+ 
+     ## model
+diff --git a/code/diffuser/datasets/buffer.py b/code/diffuser/datasets/buffer.py
+index 42bc734..29edcd8 100644
+--- a/code/diffuser/datasets/buffer.py
++++ b/code/diffuser/datasets/buffer.py
+@@ -9,7 +9,7 @@ class ReplayBuffer:
+ 
+     def __init__(self, max_n_episodes, max_path_length, termination_penalty):
+         self._dict = {
+-            'path_lengths': np.zeros(max_n_episodes, dtype=np.int),
++            'path_lengths': np.zeros(max_n_episodes, dtype=np.int32),
+         }
+         self._count = 0
+         self.max_n_episodes = max_n_episodes
+diff --git a/code/diffuser/utils/training.py b/code/diffuser/utils/training.py
+index e8dcdb4..3062031 100644
+--- a/code/diffuser/utils/training.py
++++ b/code/diffuser/utils/training.py
+@@ -158,6 +158,8 @@ class Trainer(object):
+             'ema': self.ema_model.state_dict()
+         }
+         savepath = os.path.join(self.bucket, logger.prefix, 'checkpoint')
++        # import ipdb
++        # ipdb.set_trace()
+         os.makedirs(savepath, exist_ok=True)
+         # logger.save_torch(data, savepath)
+         if self.save_checkpoints:
+diff --git a/code/environment.yml b/code/environment.yml
+index 31a3487..0a8ddac 100644
+--- a/code/environment.yml
++++ b/code/environment.yml
+@@ -9,6 +9,7 @@ dependencies:
+ - pip:
+     - -f https://download.pytorch.org/whl/torch_stable.html
+     - numpy
++    - setuptools==63.2.0
+     - gym==0.18.0
+     - mujoco-py==2.0.2.13
+     - matplotlib==3.3.4

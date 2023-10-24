@@ -158,6 +158,8 @@ class Trainer(object):
             'ema': self.ema_model.state_dict()
         }
         savepath = os.path.join(self.bucket, logger.prefix, 'checkpoint')
+        # import ipdb
+        # ipdb.set_trace()
         os.makedirs(savepath, exist_ok=True)
         # logger.save_torch(data, savepath)
         if self.save_checkpoints:

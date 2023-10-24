@@ -9,6 +9,7 @@ dependencies:
 - pip:
     - -f https://download.pytorch.org/whl/torch_stable.html
     - numpy
+    - setuptools==63.2.0
     - gym==0.18.0
     - mujoco-py==2.0.2.13
     - matplotlib==3.3.4
